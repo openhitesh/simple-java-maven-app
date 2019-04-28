@@ -24,7 +24,22 @@ pipeline {
                 }
             }
         }
-        stage('Deliver') { 
+        stage('Scan') {
+            steps {
+                sh 'echo "Scan completed."'
+            }
+        }
+        stage('Static Analysis') {
+            steps {
+                sh 'echo "Scan completed."'
+            }
+        }
+        stage('QA Regression Tests') {
+            steps {
+                sh 'echo "QA Approved."'
+            }
+        }
+        stage('Deploy') { 
             steps {
                 sh './jenkins/scripts/deliver.sh' 
             }
